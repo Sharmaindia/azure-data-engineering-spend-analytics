@@ -2,6 +2,26 @@
 End-to-end Azure Data Engineering project using ADF, ADLS Gen2, Databricks, PySpark, Delta Lake and Medallion Architecture.
 # Azure Spend Analytics Data Engineering Pipeline
 
+## 📂 Project Structure
+
+| Folder | Description |
+|---|---|
+| `adf/` | ADF ingestion and orchestration design |
+| `architecture/` | End-to-end architecture diagrams |
+| `databricks/` | Bronze, Silver, Gold and Delta MERGE PySpark code |
+| `sql/` | Metadata/control table and watermark SQL |
+| `sample-data/` | Sample spend transaction data |
+
+## 🔄 End-to-End Data Flow
+
+1. CSV spend files are received from the source.
+2. Azure Data Factory orchestrates ingestion into ADLS Gen2.
+3. Databricks reads raw data into the Bronze layer.
+4. PySpark cleans and validates data for the Silver layer.
+5. Delta Lake MERGE handles inserts and updates.
+6. Gold tables aggregate spend by vendor and category.
+7. Curated Gold data is made available for analytics and reporting.
+
 ## 📌 Project Overview
 
 This project demonstrates an end-to-end Azure Data Engineering pipeline for processing and transforming spend data.
